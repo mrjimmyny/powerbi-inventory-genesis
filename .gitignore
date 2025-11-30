@@ -1,13 +1,27 @@
 # Ignorar arquivos de sistema Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 
 # Ignorar arquivos de ambiente virtuais
 .env
+env/
 venv/
+.venv/
+*_pyvenvs/
+
 
 # Ignorar configurações locais do VS Code
 .vscode/
+
+# Backups e zips
+*_bkps/
+*.zip
+
+# Ignorar arquivos de sistema operacional
+.DS_Store
+Thumbs.db
 
 # Ignorar arquivos de dados temporários gerados pelo script
 # (Opcional: se você quiser que o usuário baixe os exemplos, não coloque isso. 
@@ -16,10 +30,23 @@ measures_enriched.csv
 measures_for_ai.csv
 model_structure.json
 pbi_config.json
+conteudo_manual.md
+conteudo_manual_tecnico.md
+docs_generator.py
+template_apresentacao.html
+logo-havas-rouge.html
+logo-havas-rouge.svg
+tutorial_intro.md
 
-# --- Pasta de Saída (Seus arquivos gerados) ---
-_glb_projects/
+# ---- Projetos globais ----
+# Ignora tudo em _glb_projects...
+_glb_projects/*
+# ...exceto a pasta do pipeline do inventário:
+!_glb_projects/pbi_inventory_pipeline/
 
-# Ignorar arquivos de sistema operacional
-.DS_Store
-Thumbs.db
+# Dentro dessa pasta, ignora tudo...
+_glb_projects/pbi_inventory_pipeline/*
+# ...e libera só os arquivos que você quer versionar
+!_glb_projects/pbi_inventory_pipeline/MANUAL_INSTRUCOES.md
+!_glb_projects/pbi_inventory_pipeline/MANUAL_INSTRUCOES.pdf
+!_glb_projects/pbi_inventory_pipeline/MANUAL_INSTRUCOES_TECNICO.md
